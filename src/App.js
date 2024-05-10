@@ -3,16 +3,19 @@ import './App.css';
 import Layout from './Theme/Layout';
 import PrivateRoute from "./routes/PrivateRoute";
 import AddTask from "./pages/AddTask";
-import Main from "./Theme/Main";
+import Main from "./pages/Main";
+import Login from "./pages/Auth/Login";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div>
     <BrowserRouter>
         <Routes>
-       
+        <Route path="/login" element={<Login/>} />
           <Route path="/" element={<Layout />} >
-          <Route path="/main" element={<Main/>} />
+          <Route index element={<Main/>} />
           <Route path="/pages/AddTask" element={ <AddTask/>} />
 
         </Route>

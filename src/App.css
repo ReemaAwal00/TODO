@@ -16,10 +16,11 @@ body {
   font-size: 1rem;
   height: 80px;
   width: 100%;
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(247, 247, 247);
   box-shadow: 0px 0px 10px 5px rgba(43, 43, 43, 0.5);
   display: flex;
   overflow: hidden; 
+  border-bottom: 1px solid #e8e8e8; 
 }
 
 .header h1 {
@@ -37,13 +38,14 @@ body {
   float: left;
   height: 660px;
   width: 20%;
-  background-color: rgb(244, 244, 244);
-  color: black;
+  background-color: mediumslateblue;
+  color: white;
+  /* border-radius: 0 10px 10px 0; */
   
 }
 a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 
@@ -62,8 +64,9 @@ a{
 
 
 .sidebar ul li:hover {
-  background: linear-gradient(to right, mediumslateblue, #2196F3);
-  height: 100%;
+  background: linear-gradient(to left, mediumslateblue, #2196F3);
+  height: 35px;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -75,7 +78,7 @@ a{
   float: right;
   height: 660px;
   width: 80%;
-  background-color: white;
+  background-color: rgb(247, 247, 247);
 }
 
 .logout-btn {
@@ -153,7 +156,7 @@ line-height: 50px;
   outline: none; /* Remove the default focus outline */
   transition: background 0.3s;
   margin-left: 90px;
-  margin-top: 20px;
+  margin-top: 50px;
   font-weight: 500;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 150px;
@@ -164,7 +167,7 @@ line-height: 50px;
 }
 
 .task{
-  background-color: #2196F3;
+  /* background-color: #;2196F3 */
   height: 450px;
   width: 80%;
   margin-top: 40px;
@@ -186,7 +189,120 @@ line-height: 50px;
   margin-top: 10px;
 }
 
+.login-header h1 {
+  position: relative;
+  top: 40px;
+  left: 240px;
+ 
+  /* text-align: center; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 40px;
+  color: mediumslateblue;
+  max-width: 100%;
+  /* Set a maximum width for the heading */
+  overflow: hidden;
+  /* Hide any content that overflows the width */
+  white-space: nowrap;
+  
+}
 
+.login-header h3 {
+  position: relative;
+  top: 80px;
+  left: 250px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+  max-width: 100%;
+  overflow:hidden ;
+  white-space: nowrap;
+
+}
+
+.login-form {
+  /* background-color: red; */
+  height: 300px;
+  width: 30%;
+  /* align-items: center; */
+
+  margin-top: 80px;
+  /* display: flex; */
+  justify-content: center;
+  margin-left: 250px;
+
+}
+
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.form-group {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 30px;
+  font-size: 20px;
+
+}
+
+.btn-primary {
+  margin-top: 30px;
+  width: 50%;
+  border-radius: 20px;
+  height: 45px;
+  color: white;
+  background-color: mediumslateblue;
+  border:mediumslateblue 1px solid  ;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn-primary:hover {
+  background-color: rgb(113, 96, 208);
+ 
+}
+
+.login-container {
+  display: flex;
+  height: 440px;
+  /* background-color: #4CAF50; */
+  width: 90%;
+  /* margin-left: 40px; */
+}
+
+.login-box {
+  height: 360px;
+  background-color: mediumslateblue;
+  width: 50%;
+  margin-left: 140px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+}
+
+.login-box h2 {
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 40px;
+
+}
+
+.login-box h4 {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin-left: 40px;
+  line-height: 40px;
+}
 
 
 
