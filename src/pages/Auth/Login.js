@@ -29,15 +29,6 @@ const Login = () => {
 
     if(isLogin) {
       localStorage.setItem('isLogin','1');
-    //   toast.success('Welcome back',{
-    //     position:"top-right",
-    //     autoClose:5000,
-    //     hideProgressBar:false,
-    //     closeOnClick:true,
-    //     pauseOnHover:true,
-    //     draggable:true,
-    //     theme:"colored",
-    //   });
       navigate('/pages/Main');
     } else {
         alert('Login failed');
@@ -46,12 +37,12 @@ const Login = () => {
     }
  
 
-  useEffect(() => {
-    const isLogin = localStorage.getItem('isLogin');
-    if(isLogin === '1'){
-      navigate('/pages/Main');
-    }
-  });
+    useEffect(() => {
+      const isLogin = localStorage.getItem('isLogin');
+      if(isLogin === '1') {
+        navigate('/');
+      }
+    }, []);
     return (
         <div>
             <div class="login-header">

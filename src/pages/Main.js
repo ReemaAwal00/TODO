@@ -6,7 +6,7 @@ const Main =() =>{
         <div class="description">
             <h3>Organize & Manage your tasks  with <a href="">ListFull</a></h3>
             <br></br>
-            <Link to="/pages/AddTask" className="gradient-button">Add Task</Link>
+            <Link to="AddTask" className="gradient-button">Add Task</Link>
             
         </div>
         
