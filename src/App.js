@@ -13,12 +13,13 @@ function App() {
     <div>
     <BrowserRouter>
         <Routes>
-        <Route path="/login" element={<Login/>} />
+        <Route path="/Login" element={<Login/>} > </Route>
           <Route path="/" element={<Layout />} >
           <Route index element={<Main/>} />
           <Route path="/pages/AddTask" element={ <AddTask/>} />
 
         </Route>
+       
         </Routes>
         </BrowserRouter>
         </div>
