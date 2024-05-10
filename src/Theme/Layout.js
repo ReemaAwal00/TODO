@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
-// import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Main from "./Main";
+import Main from "../pages/Main";
 // import Footer from "./Footer";
 
 const Layout = () => {
@@ -10,10 +9,10 @@ const Layout = () => {
     <div>
       <Header />
       <Sidebar />
-      {/* <Main/> */}
+      <Outlet />
+
      
        
-          <Outlet />
       
      
       {/* <Footer /> */}

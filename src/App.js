@@ -3,7 +3,7 @@ import './App.css';
 import Layout from './Theme/Layout';
 import PrivateRoute from "./routes/PrivateRoute";
 import AddTask from "./pages/AddTask";
-import Main from "./Theme/Main";
+import Main from "./pages/Main";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
        
           <Route path="/" element={<Layout />} >
-          <Route path="/main" element={<Main/>} />
+          <Route index element={<Main/>} />
           <Route path="/pages/AddTask" element={ <AddTask/>} />
 
         </Route>
