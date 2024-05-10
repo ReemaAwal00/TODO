@@ -7,12 +7,15 @@ import Main from "../pages/Main";
 const Layout = () => {
   return (
     <div>
-      <Header />
+     <Header />
       <Sidebar />
       <Outlet />
 
-     <h1></h1>
-       
+
+     
+      <Outlet />
+
+
       
      
       {/* <Footer /> */}
