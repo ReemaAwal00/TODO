@@ -1,75 +1,118 @@
 import React, { useState } from "react";
 import ViTextInput from "../components/ViTextInput";
+import SelectLabel from "../components/SelectLabel";
 import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import { useParams } from "react-router-dom";
+import { addUser } from "../service/api-service";
 
 const AddTask = () => {
-  const [selectedDate, setSelectedDate]= useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const { userId } = useParams();
+  const navigate = useNavigate();
+  const [user, setUser] = useState({
+    name: "",
+    date: null, // Use null for date initially
+    priority: "",
+  });
 
+  const options = [
+    { value: '1', label: 'High Priority' },
+    { value: '2', label: 'Medium Priority' },
+    { value: '3', label: 'Low Priority' },
+  ];
 
-//     const [myTodos, setTodo] = useState([]);
-//   const [inputData, setInputData] = useState("");
+  const handleInputChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
 
-//   const addTodo = (event) => {
-//     console.log("in addTodo function :", inputData);
-//     if (inputData !== "") setTodo((oldData) => [...oldData, inputData]);
-//     setInputData("");
-//   };
+  
+const [errorMsg, setErrMsg] = useState({
+  name: "",
+  date: "",
+  priority: "",
+});
 
-//   const inputDataOnChange = (event) => {
-//     setInputData(event.target.value);
-//   };
+  const saveForm = () => {
+    if (validateForm()) {
+      const uuid = uuidv4();
+      const item = { ...user, id: uuid, date: selectedDate }; // Include selectedDate
+      addUser(item)
+        .then(() => {
+          console.log("User saved");
+          navigate('/pages/Main');
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("SERVER ERROR");
+        });
+    }
+  };
 
-//   const deleteItem = (id) => {
-//     console.log(`Item deleted id ${id}`);
-//     setTodo((prevData) => prevData.filter((_, index) => index !== id));
-//   };
+  const validateForm = () => {
+    let isValid = true;
+    const err = { name: "", date: "", priority: "" };
 
-    return(
-<div>
-    
-    <div className="main_div">
-    {/* <div className="center_div"> */}
+    if (user.name === '') {
+      err.name = 'Name is required';
+      isValid = false;
+    }
+
+    if (!selectedDate) {
+      err.date = 'Date is required';
+      isValid = false;
+    }
+
+    if (user.priority === '') {
+      err.priority = 'Priority is required';
+      isValid = false;
+    }
+
+    setUser({ ...user, date: selectedDate }); // Update user state with selected date
+    return isValid;
+  };
+
+  return (
+    <div>
+      <div className="main_div">
         <br />
         <h1>Add new task</h1>
         <br />
-        <ViTextInput 
-        title="Enter task"
-        name="username"/>
-       
-       <DatePicker
-       className="date"
-       selected={selectedDate}
-       onChange={date => setSelectedDate(date)}
-       />
+        <form>
+          <ViTextInput 
+            title="Enter task"
+            name="name"
+            value={user.name}
+            handleInputChange={handleInputChange}
+            errMessage={errorMsg.name}
+          />
 
-     
+          <DatePicker
+            placeholderText="Select Date"
+            className="date"
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+          />
 
+          <SelectLabel
+            title="Select a Priority:"
+            name="priority"
+            options={options}
+            value={user.priority}
+            handleInputChange={handleInputChange}
+          />
 
-       
-        <form >
-        <label>
-          Select an option:
-          <select >
-            
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </label>
-
-       
-      </form>
-
-      
-
-    {/* </div> */}
-</div>
-
-
-     
-       
-    </div> 
-    );
-}
+          <div className="form-group">
+            <button type="button" onClick={saveForm} className="btn">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default AddTask;
