@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-
+import ViTextInput from "../components/ViTextInput";
+import DatePicker from 'react-datepicker';
 
 const AddTask = () => {
+  const [selectedDate, setSelectedDate]= useState(null);
+
+
 //     const [myTodos, setTodo] = useState([]);
 //   const [inputData, setInputData] = useState("");
 
@@ -22,34 +26,49 @@ const AddTask = () => {
 
     return(
 <div>
-    <h1>Hello</h1>
+    
+    <div className="main_div">
+    {/* <div className="center_div"> */}
+        <br />
+        <h1>Add new task</h1>
+        <br />
+        <ViTextInput 
+        title="Enter task"
+        name="username"/>
+       
+       <DatePicker
+       className="date"
+       selected={selectedDate}
+       onChange={date => setSelectedDate(date)}
+       />
+
+     
+
+
+       
+        <form >
+        <label>
+          Select an option:
+          <select >
+            
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </label>
+
+       
+      </form>
+
+      
+
+    {/* </div> */}
 </div>
 
-/* <div className="main_div">
-      <div className="center_div">
-        <br />
-        <h1>TodoList</h1>
-        <br />
-        <input
-          type="text"
-          placeholder="Add a Todo"
-          onChange={inputDataOnChange}
-          value={inputData}
-        />
-        <button onClick={addTodo}>+</button>
 
-        <ol>
-          {myTodos.map((value, index) => (
-            <ListData
-              key={index}
-              itemData={value}
-              id={index}
-              onSelect={deleteItem}
-            />
-          ))}
-        </ol>
-      </div>
-    </div> */
+     
+       
+    </div> 
     );
 }
 

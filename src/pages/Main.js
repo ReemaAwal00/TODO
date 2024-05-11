@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import DatePicker from 'react-datepicker';
+
 const Main =() =>{
+  const [startDate, setStartDate] = useState(new Date());
+
     return(
         <div>
               <div class="maincontainer">
@@ -13,6 +19,11 @@ const Main =() =>{
 
         <div class="task">
             <h2>Today's Tasks</h2>
+            <DatePicker
+      className="date"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+    />  
         </div>
     </div>
         </div>
