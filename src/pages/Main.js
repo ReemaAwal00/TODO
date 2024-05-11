@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-
+import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
 
 const Main =() =>{
