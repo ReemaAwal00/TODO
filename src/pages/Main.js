@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Checklist from "../components/Checklist";
+import Today from "../components/Today";
 const Main =() =>{
 
     return(
@@ -14,11 +15,16 @@ const Main =() =>{
             
         </div>
 
-        <Checklist/>
         
 
         <div class="task">
+        {/* <Checklist/> */}
+
             <h2>Today's Tasks</h2>
+
+        <Today/>
+
+
             
         </div>
     </div>

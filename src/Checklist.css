@@ -4,7 +4,6 @@
   background: white;
   border-radius: 5px;
   box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-  padding: 20px; /* Added padding for better spacing */
 }
 
 .item {
@@ -18,10 +17,6 @@
   border-bottom: 0;
 }
 
-.box:checked + p {
-  background: #F9F9F9;
-  text-decoration: line-through;
-}
 
 .box[type="checkbox"] {
   margin-right: 10px; /* Adjusted margin for checkbox */
@@ -40,5 +35,5 @@ p {
 }
 
 /* Adjusted taskBox class */
-.taskBox1 {
+.taskBox {
 }
