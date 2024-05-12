@@ -17,6 +17,8 @@ body {
   /* color: mediumslateblue; */
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  overflow:  hidden !important;
+
 }
 
 .header {
@@ -24,7 +26,7 @@ body {
   height: 80px;
   width: 100%;
   background-color: rgb(247, 247, 247);
-  box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5);
+  /* box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5); */
   display: flex;
   overflow: hidden; 
   border-bottom: 1px solid #e8e8e8; 
@@ -85,7 +87,7 @@ a{
   float: right;
   height: 660px;
   width: 80%;
-  background-color: rgb(247, 247, 247);
+  background-color: white;
 }
 
 .logout-btn {
@@ -140,8 +142,8 @@ a{
 margin-top: 30px;
 margin-left: 90px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size: 30px;
-line-height: 50px;
+font-size: 32px;
+line-height: 80px;
 }
 
 .description h3 a{
@@ -164,6 +166,7 @@ line-height: 50px;
   margin-left: 90px;
   margin-top: 50px;
   font-weight: 500;
+  font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 150px;
 }
@@ -322,8 +325,8 @@ input[type=text], input[type=password],select {
   width: 70%;
   height: 100px;
   background-color: white;
-  
-  margin-left: 320px;
+  margin-top: 30px;
+  margin-left: 380px;
   /* display: flex;
   justify-content: center;
   text-align: center;
@@ -364,7 +367,30 @@ input[type=text], input[type=password],select {
   width: 200px;
 }
 
+.add-button{
+  background: linear-gradient(to right, mediumslateblue, #2196F3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to control the roundness */
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  transition: background 0.3s;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 150px;
+}
 
+.main_div p{
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-
-
+.schedule_div{
+  background-color: #2196F3;
+  height: 200px;
+  width: 80%;
+  margin-left: 20px;
+}
