@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import ViTextInput from "../components/ViTextInput";
 import SelectLabel from "../components/SelectLabel";
 import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import { addUser } from "../service/api-service";
 
 const AddTask = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const { userId } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -17,7 +20,8 @@ const AddTask = () => {
     { value: '1', label: 'High Priority' },
     { value: '2', label: 'Medium Priority' },
     { value: '3', label: 'Low Priority' },
-  ];
+  ]; 
+  // yei reuse huncha sabai CRUD ma
 
   const handleInputChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -34,7 +38,8 @@ const [errorMsg, setErrMsg] = useState({
     if (validateForm()) {
       const uuid = uuidv4();
       const item = { ...user, id: uuid, date: selectedDate }; // Include selectedDate
-      addUser(item)
+      addUser(item) //yesko thau ma DisplayTask, Delete, Update matra rakhne ho aba
+      // ahh tara Update ma chai sir ko way ma ali confusing cha, Ani timro project ma TODAY, wala gpt lai sodhnu parhca ani sakkyo
         .then(() => {
           console.log("User saved");
           navigate('/pages/Main');
@@ -75,44 +80,39 @@ const [errorMsg, setErrMsg] = useState({
         <br />
         <h1>Add new task</h1>
         <br />
-        <ViTextInput 
-        title="Enter task"
-        name="username"/>
-       
-       <DatePicker
-       className="date"
-       selected={selectedDate}
-       onChange={date => setSelectedDate(date)}
-       />
+        <form>
+          <ViTextInput 
+            title="Enter task"
+            name="name"
+            value={user.name}
+            handleInputChange={handleInputChange}
+            errMessage={errorMsg.name}
+          />
 
-     
+          <DatePicker
+            placeholderText="Select Date"
+            className="date"
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+          />
 
+          <SelectLabel
+            title="Select a Priority:"
+            name="priority"
+            options={options}
+            value={user.priority}
+            handleInputChange={handleInputChange}
+          />
 
-       
-        <form >
-        <label>
-          Select an option:
-          <select >
-            
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </label>
-
-       
-      </form>
-
-      
-
-    {/* </div> */}
-</div>
-
-
-     
-       
-    </div> 
-    );
-}
+          <div className="form-group">
+            <button type="button" onClick={saveForm} className="btn">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default AddTask;

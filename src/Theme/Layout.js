@@ -10,12 +10,10 @@ const Layout = () => {
     <div>
      <Header />
       <Sidebar />
-<<<<<<<<< Temporary merge branch 1
       <Outlet />
 
      <h1></h1>
        
-          <Outlet />
       
      
       {/* <Footer /> */}
