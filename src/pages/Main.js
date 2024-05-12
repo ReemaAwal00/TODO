@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-
+import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
 
 const Main =() =>{
-  const [startDate, setStartDate] = useState(new Date());
 
     return(
         <div>
@@ -15,15 +14,18 @@ const Main =() =>{
             <Link to="AddTask" className="gradient-button">Add Task</Link>
             
         </div>
+
         
 
         <div class="task">
+        {/* <Checklist/> */}
+
             <h2>Today's Tasks</h2>
-            <DatePicker
-      className="date"
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-    />  
+
+        <Today/>
+
+
+            
         </div>
     </div>
         </div>

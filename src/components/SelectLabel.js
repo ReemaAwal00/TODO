@@ -11,6 +11,9 @@ const SelectLabel = (props) => {
         onChange={props.handleInputChange}
         style={{ borderColor: props.errMessage ? 'red' : 'initial' }}
       >
+        <option value="" disabled hidden>
+          {props.placeholderText}
+        </option>
         {props.options.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}

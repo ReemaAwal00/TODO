@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import './Checklist.css';
+
 import Layout from './Theme/Layout';
 import PrivateRoute from "./routes/PrivateRoute";
 import AddTask from "./pages/AddTask";
 import Main from "./pages/Main";
+import Task from "./pages/Task";
 import Login from "./pages/Auth/Login";
 
 
@@ -23,6 +26,10 @@ function App() {
 
       {/* Nested route for AddTask component */}
       <Route path="AddTask" element={<AddTask />} />
+      <Route path="AddTask/:taskId?" element={<AddTask />} />
+
+      <Route path="Task" element={<Task />} />
+
     </Route>
   </Routes>
 </BrowserRouter>

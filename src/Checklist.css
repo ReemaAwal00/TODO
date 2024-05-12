@@ -1,0 +1,39 @@
+.inbox {
+  max-width: 800px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+  padding: 10px ; /* Added padding for spacing between items */
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+
+.box[type="checkbox"] {
+  margin-right: 10px; /* Adjusted margin for checkbox */
+}
+
+p {
+  margin: 0;
+  transition: background 0.2s;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  flex: 1; /* Ensure each p tag takes up equal space */
+  padding: 10px 20px; /* Added padding for better spacing within p tags */
+  text-align: center; /* Center text horizontally */
+  border-left: 1px solid #D1E2FF;
+}
+
+/* Adjusted taskBox class */
+.taskBox {
+}
