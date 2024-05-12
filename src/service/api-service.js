@@ -12,4 +12,15 @@ export const addUser = (data) => {
           })
     });
   }
+
+  export const displayAllTasks = () => {
+    return new Promise((resolve, reject) => {
+      axios.get(BASE_URL).then((res) => {
+        resolve(res.data);
+      }).catch((err) => {
+        reject(err);
+      });
+    });
+  }
+  
   

@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import './Checklist.css';
+
 import Layout from './Theme/Layout';
 import PrivateRoute from "./routes/PrivateRoute";
 import AddTask from "./pages/AddTask";
