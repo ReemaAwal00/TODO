@@ -8,12 +8,8 @@ const Header = () => {
         <div className="header">
 
             <h1>ListFull</h1>
-            {/* <div class="search-container"> */}
-            {/* <TextField id="standard-basic" label="Standard" /> */}
-                {/* <input type="text" placeholder="Search your tasks"> */}
-                    {/* <button type="submit"><i class="fa fa-search"></i></button> */}
-            {/* </div> */}
-
+            
+            <img src="../logo192.png"></img>
         </div>
     )
 };
