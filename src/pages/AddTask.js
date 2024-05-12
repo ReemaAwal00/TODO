@@ -5,12 +5,12 @@ import SelectLabel from "../components/SelectLabel";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { v4 as uuidv4 } from 'uuid';
-import { addUser, getTaskById, updateTask } from "../service/api-service";
-import { success } from "../utils/notification";
+import { useParams } from "react-router-dom";
+import { addUser } from "../service/api-service";
 
 const AddTask = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const { taskId } = useParams();
+  const { userId } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -22,7 +22,8 @@ const AddTask = () => {
     { value: '1', label: 'High Priority' },
     { value: '2', label: 'Medium Priority' },
     { value: '3', label: 'Low Priority' },
-  ];
+  ]; 
+  // yei reuse huncha sabai CRUD ma
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -35,24 +36,7 @@ const AddTask = () => {
     priority: "",
   });
 
-  useEffect(() => {
-    if (taskId) {
-      getTaskDetails(taskId);
-    }
-  }, [taskId]);
 
-  const getTaskDetails = (taskId) => {
-    getTaskById(taskId)
-      .then((taskData) => {
-        setUser(taskData);
-        if (taskData.date) {
-          setSelectedDate(new Date(taskData.date));
-        }
-      })
-      .catch((err) => {
-        console.log("Error fetching task:", err);
-      });
-  };
 
   const validateForm = () => {
     let isValid = true;
