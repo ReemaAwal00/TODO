@@ -75,6 +75,17 @@ export const addUser = (data) => {
     });
   }
 
+//   export const deleteTask = (taskId) => {
+//     return new Promise((resolve, reject) => {
+//         axios.delete(`${BASE_URL}/tasks/${taskId}`)
+//             .then(response => {
+//                 resolve(response.data);
+//             })
+//             .catch(error => {
+//                 reject(error);
+//             });
+//     });
+// };
   export const searchByTaskPriority = (priority) => {
     return new Promise((resolve, reject) => {
       axios.get(`${BASE_URL}?priority=${priority}`)
@@ -86,6 +97,4 @@ export const addUser = (data) => {
     });
   }
 
-  //new api
-  //try
   

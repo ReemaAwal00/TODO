@@ -126,6 +126,12 @@ const Today = () => {
                     <p className="taskBox">{task.name}</p>
                     <p className="taskBox">{task.date.split('T')[0]}</p>
                     <p className="taskBox1">{getPriorityText(task.priority)}</p>
+                    <Link to={`../AddTask/${task.id}`}>
+                        <p className="taskBox1">📝</p>
+                    </Link>
+                    <Link to={`../AddTask/${task.id}`}>
+                        <p className="taskBox1">❌</p>
+                    </Link>
                 </div>
             ))}
         </div>
@@ -134,3 +140,5 @@ const Today = () => {
 };
 
 export default Today;
+
+
