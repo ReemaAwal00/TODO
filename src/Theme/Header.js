@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-// import VirinchiLogo from "../../assets/images/virinchi-logo.png";
 
 
 const Header = () => {
