@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import ViPasswordInput from "../../components/ViPasswordInput";
 import ViTextInput from "../../components/ViTextInput";
 // import ViMessage from "../../components/ViMessage";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const Login = () => {
     const navigate = useNavigate();
@@ -29,6 +29,15 @@ const Login = () => {
 
     if(isLogin) {
       localStorage.setItem('isLogin','1');
+      toast.success('Welcome back',{
+        position:"top-right",
+        autoClose:5000,
+        hideProgressBar:false,
+        closeOnClick:true,
+        pauseOnHover:true,
+        draggable:true,
+        theme:"colored",
+      });
       navigate('/pages/Main');
     } else {
         alert('Login failed');
@@ -73,7 +82,7 @@ const Login = () => {
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div> --> */}
 
-                            <button type="submit"  onClick={doLogin} class="btn btn-primary">Log in</button>
+                            <button type="submit"  onClick={doLogin} class="login-button">Log in</button>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Dont have an account? SignUp</label>
 

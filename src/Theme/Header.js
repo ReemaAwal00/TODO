@@ -1,18 +1,25 @@
 import { useNavigate } from "react-router-dom";
+// import VirinchiLogo from "../../assets/images/virinchi-logo.png";
 
 
 const Header = () => {
+    const [isVisible, setIsVisible] = useState(false);
 
+    useEffect(() => {
+        // Set isVisible to true after component mounts
+        setIsVisible(true);
+    }, []);
     return (
         <div className="header">
 
             <h1>ListFull</h1>
-            {/* <div class="search-container"> */}
-            {/* <TextField id="standard-basic" label="Standard" /> */}
-                {/* <input type="text" placeholder="Search your tasks"> */}
-                    {/* <button type="submit"><i class="fa fa-search"></i></button> */}
-            {/* </div> */}
-
+            {/* <div className="{`fade-in-text ${isVisible ? 'visible' : ''}`}">
+            <p>This text will fade in when the component mounts.</p>
+            </div> */}
+             <div className="fading-text">
+                Let's Be Some Productive Everyday😉
+            </div>
+            
         </div>
     )
 };

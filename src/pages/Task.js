@@ -1,8 +1,8 @@
-import React from 'react';
+import Checklist from "../components/Checklist"
 
-const Task =() =>{
+const Task = () =>{
     return(
-
+        <Checklist/>
     )
 }
 

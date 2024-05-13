@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import Main from "../pages/Main";
 // import Footer from "./Footer";
 
+
 const Layout = () => {
   return (
     <div>
@@ -11,11 +12,8 @@ const Layout = () => {
       <Sidebar />
       <Outlet />
 
-
-     
-      <Outlet />
-
-
+     <h1></h1>
+       
       
      
       {/* <Footer /> */}

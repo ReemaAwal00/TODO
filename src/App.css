@@ -5,11 +5,20 @@
   box-sizing: border-box;
 }
 
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 100%;
+}
+
 body {
   background-color: white;
   /* color: mediumslateblue; */
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
+  overflow:  hidden !important;
+
 }
 
 .header {
@@ -17,7 +26,7 @@ body {
   height: 80px;
   width: 100%;
   background-color: rgb(247, 247, 247);
-  box-shadow: 0px 0px 10px 5px rgba(43, 43, 43, 0.5);
+  /* box-shadow: 0px 0px 10px 5px rgba(142, 141, 141, 0.5); */
   display: flex;
   overflow: hidden; 
   border-bottom: 1px solid #e8e8e8; 
@@ -66,7 +75,7 @@ a{
 .sidebar ul li:hover {
   background: linear-gradient(to left, mediumslateblue, #2196F3);
   height: 35px;
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
 }
 
@@ -78,7 +87,7 @@ a{
   float: right;
   height: 660px;
   width: 80%;
-  background-color: rgb(247, 247, 247);
+  background-color: white;
 }
 
 .logout-btn {
@@ -108,15 +117,14 @@ a{
   margin-top: 25px;
 }
 
-input[type="text"] {
+/* input[type="text"] {
   padding: 8px 30px 8px 10px;
-  /* Adjust padding as needed */
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-left: 250px;
   width: 500px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 .search-container button {
   position: absolute;
@@ -134,8 +142,8 @@ input[type="text"] {
 margin-top: 30px;
 margin-left: 90px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size: 30px;
-line-height: 50px;
+font-size: 32px;
+line-height: 80px;
 }
 
 .description h3 a{
@@ -158,6 +166,7 @@ line-height: 50px;
   margin-left: 90px;
   margin-top: 50px;
   font-weight: 500;
+  font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 150px;
 }
@@ -233,28 +242,32 @@ line-height: 50px;
 
 }
 
-input[type=text], input[type=password], select {
+input[type=text], input[type=password],select {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 20px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+}
+.search{
+  width: 60% !important;
+  margin-left: 20% !important;
 }
 
 .form-group {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 20px;
 
 }
 
-.btn-primary {
-  margin-top: 30px;
-  width: 50%;
+.form-button{
+  margin-top: 10px;
+  width: 20%;
   border-radius: 20px;
   height: 45px;
   color: white;
@@ -264,7 +277,7 @@ input[type=text], input[type=password], select {
   font-size: 20px;
 }
 
-.btn-primary:hover {
+.form-button:hover {
   background-color: rgb(113, 96, 208);
  
 }
@@ -275,6 +288,10 @@ input[type=text], input[type=password], select {
   /* background-color: #4CAF50; */
   width: 90%;
   /* margin-left: 40px; */
+}
+
+.name{
+  width:20px;
 }
 
 .login-box {
@@ -296,6 +313,22 @@ input[type=text], input[type=password], select {
 
 }
 
+.login-button{
+  background: linear-gradient(to right, mediumslateblue, #2196F3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to control the roundness */
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  transition: background 0.3s;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 150px;
+}
+
 .login-box h4 {
   font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -304,5 +337,109 @@ input[type=text], input[type=password], select {
   line-height: 40px;
 }
 
+.main_div {
+  width: 70%;
+  height: 100px;
+  background-color: white;
+  margin-top: 30px;
+  margin-left: 380px;
+  /* display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center; */
+}
 
+.center_div {
+  width: 100%;
+  height: 80vh;
+  background-color: #f7f7f7;
+  /* box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.5); */
+  border-radius: 20px; 
+  margin-top: 30px;
+  margin-left: 50px;
+ } 
 
+.center_div h1 {
+  color: mediumslateblue;
+  /* background-color: #8566aa; */
+  /* padding: 6px 0 2px 0; */
+  text-align: left;
+  margin-left: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+/* .DatePicker {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
+
+/* .date{
+  width: 20px;
+} */
+
+.center_div [ViTextInput]{
+  width: 200px;
+}
+
+.add-button{
+  background: linear-gradient(to right, mediumslateblue, #2196F3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to control the roundness */
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  transition: background 0.3s;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 150px;
+}
+
+.main_div p{
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.schedule_div{
+  background-color: #2196F3;
+  height: 200px;
+  width: 80%;
+  margin-left: 20px;
+}
+
+/* .fade-in-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in-text.visible {
+  opacity: 1;
+} */
+.fading-text {
+  animation: fadeIn 20s infinite;
+  overflow: hidden; /* Ensure text does not overflow its container */
+  white-space: nowrap; /* Prevent line breaks */
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px 0px 0px 355px;
+  font-weight: 500;
+  color: mediumslateblue;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      width: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      width: 100%; /* Fully visible text */
+  }
+}
