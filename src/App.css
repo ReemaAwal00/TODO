@@ -175,6 +175,26 @@ line-height: 80px;
   background: linear-gradient(to right, #4CAF50, #2196F3);
 }
 
+.gradient-button1 {
+  background: linear-gradient(to right, mediumslateblue, #2196F3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to control the roundness */
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  transition: background 0.3s;
+  margin-left: 590px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100px;
+}
+
+.gradient-button1:hover {
+  background: linear-gradient(to right, #4CAF50, #2196F3);
+}
+
 .task{
   /* background-color: #;2196F3 */
   height: 450px;

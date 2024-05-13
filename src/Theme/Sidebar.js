@@ -1,21 +1,15 @@
+import { Link } from "react-router-dom";
 const Sidebar =() =>{
-    const navigate = useNavigate();
-  const logout =( ) => {
-   
-    localStorage.removeItem('isLogin')
-    navigate('/');
-  }
-
     return(
         <div class="sidebar">
         <ul>
-            <a href="#"><li > Dashboard</li></a>
-            <a href="Alltask.html"><li> All Tasks</li></a>
+            <li ><Link to="">Dashboard</Link></li>
+            <li><Link to="Task">All Tasks</Link></li>
             <a href="#"><li > Scheduled Tasks</li></a>
             <a href=""><li > My profile</li></a>
            <a href=""> <li> Settings</li></a>
         </ul>
-        <button class="logout-btn" type="button"   onClick={logout}>Log Out</button>
+        <button class="logout-btn" type="button" >Log Out</button>
     </div>
     );
 }
