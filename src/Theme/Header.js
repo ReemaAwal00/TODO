@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 // import VirinchiLogo from "../../assets/images/virinchi-logo.png";
-
+import { useState,useEffect } from "react";
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
