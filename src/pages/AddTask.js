@@ -5,12 +5,12 @@ import SelectLabel from "../components/SelectLabel";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { v4 as uuidv4 } from 'uuid';
-import { useParams } from "react-router-dom";
-import { addUser } from "../service/api-service";
+import { addUser, updateTask } from "../service/api-service";
+import { success } from "../utils/notification";
 
 const AddTask = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const { userId } = useParams();
+  const { taskId } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -132,6 +132,8 @@ const AddTask = () => {
         <form>
           <ViTextInput 
             title="Enter task"
+            placeholderText="Enter task"
+            className="text"
             name="name"
             value={user.name}
             handleInputChange={handleInputChange}
@@ -147,8 +149,8 @@ const AddTask = () => {
           />
 
           <SelectLabel
-            title="Select a Priority:"
-            placeholderText="High | Medium | Low"
+           
+            placeholderText="Select Priority"
             name="priority"
             options={options}
             value={user.priority || ""}
@@ -157,7 +159,7 @@ const AddTask = () => {
           />
 
           <div className="form-group">
-            <button type="button" onClick={saveForm} className="btn">
+            <button type="button" onClick={saveForm} className="form-button">
               Save
             </button>
           </div>

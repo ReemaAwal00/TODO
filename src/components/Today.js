@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { TodayTasks, deleteTask } from "../service/api-service";
 import '../Checklist.css';
 import { confirm } from "../utils/notification";
-
+import { Link } from "react-router-dom";
 
 const Today = () => {
     const [tasks, setTasks] = useState([]);
-    
+
 
     useEffect(() => {
         TodayTasks()
@@ -43,23 +43,22 @@ const Today = () => {
         const { isConfirmed } = await confirm("Congrats! You completed a task 😁", "Are you sure you want to delete it now?");
 
         if (isConfirmed) {
-            try {
-                await deleteTask(taskId); // Delete the task
-                // Remove the task from the UI
-                const updatedTasks = tasks.filter(task => task.id !== taskId);
-                setTasks(updatedTasks);
-                console.log("Task deleted successfully");
-            } catch (error) {
-                console.error("Error deleting task:", error);
-                // Handle deletion error (e.g., display error message)
-            }
-        } else {
-            // User cancelled deletion
-            console.log("Deletion cancelled");
+
+        try {
+            await deleteTask(taskId); // Delete the task
+            // Remove the task from the UI
+            const updatedTasks = tasks.filter(task => task.id !== taskId);
+            setTasks(updatedTasks);
+            // console.log("Task deleted successfully");              
+        } catch (error) {
+            console.error("Error deleting task:", error);
+            // Handle deletion error (e.g., display error message)
         }
+
+    }
     };
 
-    
+
 
     return (
         <div className="inbox">
@@ -74,6 +73,12 @@ const Today = () => {
                     <p className="taskBox">{task.name}</p>
                     <p className="taskBox">{task.date.split('T')[0]}</p>
                     <p className="taskBox1">{getPriorityText(task.priority)}</p>
+                    <Link to={`../AddTask/${task.id}`}>
+                        <p className="taskBox1">📝</p>
+                    </Link>
+                    <Link to={`../AddTask/${task.id}`}>
+                        <p className="taskBox1">❌</p>
+                    </Link>
                 </div>
             ))}
         </div>
@@ -81,3 +86,5 @@ const Today = () => {
 };
 
 export default Today;
+
+

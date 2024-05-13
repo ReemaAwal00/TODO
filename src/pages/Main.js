@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from 'react-datepicker';
-
+import Checklist from "../components/Checklist";
+import Today from "../components/Today";
 const Main =() =>{
+    
 
     return(
         <div>

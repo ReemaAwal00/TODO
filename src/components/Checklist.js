@@ -11,6 +11,7 @@ const Checklist = () => {
     const [tasks, setTasks] = useState([]);
     const [searchTask, setSearchTask] = useState('');
 
+
     const handleSearchTask = (e) => {
         setSearchTask(e.target.value);
         searchByTaskPriority(e.target.value).then((data) => {
@@ -75,7 +76,7 @@ const Checklist = () => {
     };
 
     return (
-        <div className="inbox">
+        <div className="inbox_checklist">
 
             <ViTextInput
             name="username"
@@ -86,13 +87,18 @@ const Checklist = () => {
             />
 
             {tasks.map((task, index) => (
+                
                 <div key={index} className="item">
+                     
                     <input type="checkbox" onClick={() => handleDeleteTask(task.id)} className="box" />
                     <p className="taskBox">{task.name}</p>
                     <p className="taskBox">{formatDate(task.date)}</p>
                     <p className="taskBox1">{getPriorityText(task.priority)}</p>
                     <Link to={`../AddTask/${task.id}`}>
                     <p className="taskBox1">📝</p>
+                    </Link>
+                    <Link to={`../AddTask/${task.id}`}>
+                    <p className="taskBox1">❌</p>
                     </Link>
                  
 
