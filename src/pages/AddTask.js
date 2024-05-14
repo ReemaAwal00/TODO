@@ -5,7 +5,7 @@ import SelectLabel from "../components/SelectLabel";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { v4 as uuidv4 } from 'uuid';
-import { addUser, updateTask } from "../service/api-service";
+import { addUser,getTaskById, updateTask } from "../service/api-service";
 import { success } from "../utils/notification";
 
 const AddTask = () => {
@@ -35,7 +35,25 @@ const AddTask = () => {
     date: "",
     priority: "",
   });
+  
+  useEffect(() => {
+    if (taskId) {
+      getTaskDetails(taskId);
+    }
+  }, [taskId]);
 
+  const getTaskDetails = (taskId) => {
+    getTaskById(taskId)
+      .then((taskData) => {
+        setUser(taskData);
+        if (taskData.date) {
+          setSelectedDate(new Date(taskData.date));
+        }
+      })
+      .catch((err) => {
+        console.log("Error fetching task:", err);
+      });
+  };
 
 
   const validateForm = () => {

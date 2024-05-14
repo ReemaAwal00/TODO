@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 // import VirinchiLogo from "../../assets/images/virinchi-logo.png";
 import React, { useState, useEffect } from 'react';
+import Second from "../images/Second";
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -12,13 +13,11 @@ const Header = () => {
     return (
         <div className="header">
 
-            <h1>ListFull</h1>
+           <Second/>
             {/* <div className="{`fade-in-text ${isVisible ? 'visible' : ''}`}">
             <p>This text will fade in when the component mounts.</p>
             </div> */}
-             <div className="fading-text">
-                Let's Be Some Productive Everyday😉
-            </div>
+            
             
         </div>
     )

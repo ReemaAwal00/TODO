@@ -28,10 +28,12 @@ function App() {
     <Route path="/pages/Main" element={<Layout />}>
       {/* Index route inside Layout component, renders Main component */}
       <Route index element={<Main />} />
+      
 
       {/* Nested route for AddTask component */}
       <Route path="AddTask" element={<AddTask />} />
       <Route path="AddTask/:taskId?" element={<AddTask />} />
+      {/* <Route path="/AddTask/:taskId?" element={<AddTask />} /> */}
     
 
       <Route path="Task" element={<Task />} />

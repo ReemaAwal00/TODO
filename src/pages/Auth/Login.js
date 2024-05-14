@@ -5,6 +5,8 @@ import ViTextInput from "../../components/ViTextInput";
 // import ViMessage from "../../components/ViMessage";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+import Image from "../../images/Image";
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -55,7 +57,8 @@ const Login = () => {
     return (
         <div>
             <div class="login-header">
-                <h1>ListFull</h1>
+             <Image/>
+               
                 <h3>Log In</h3>
                 <div class="login-container">
 
