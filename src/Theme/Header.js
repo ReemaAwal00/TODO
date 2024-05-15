@@ -2,8 +2,16 @@ import { useNavigate } from "react-router-dom";
 // import VirinchiLogo from "../../assets/images/virinchi-logo.png";
 import React, { useState, useEffect } from 'react';
 import Second from "../images/Second";
+import Notify from "../pages/Notify";
 
 const Header = () => {
+
+    const navigate = useNavigate();
+  const logout =( ) => {
+   
+    localStorage.removeItem('isLogin')
+    navigate('/');
+  }
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -21,7 +29,8 @@ const Header = () => {
             <img src="path_to_profile_image.jpg" alt="Profile" className="profile-image" />
             <span className="profile-name">John Doe</span>
         </div> */}
-        <button class="logout-btn" type="button" >Log Out</button>
+        <Notify/>
+        <button class="logout-btn" type="button" onClick={logout} >Logout</button>
             
         </div>
     )
