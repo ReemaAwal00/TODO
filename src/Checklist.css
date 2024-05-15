@@ -133,3 +133,26 @@ h5{
   font-size: 12px;
   font-weight: bold;
 }
+
+.streak-info{
+margin-left: 10px;
+line-height: 20px;
+margin-bottom: 20px;
+}
+
+.gradient-button1{
+  background: linear-gradient(to right, #4972B5, #2184d6);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to control the roundness */
+  cursor: pointer;
+  outline: none; /* Remove the default focus outline */
+  transition: background 0.3s;
+  margin-left: 90px;
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 150px;
+}

@@ -129,7 +129,7 @@ const Today = () => {
         <div className="inbox">
                <div className="streak-info">
                 <br></br>
-                <h1>🔥 Streak: {streak} </h1>({streak} task{streak !== 1 ? 's' : ''} completed today)
+                <h1>🔥 Streak: {streak} </h1> <br></br>({streak} task{streak !== 1 ? 's' : ''} completed today)
             </div>
             {tasks.map(task => (
                 <div key={task.id} className="item">
