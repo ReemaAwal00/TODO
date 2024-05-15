@@ -62,6 +62,21 @@ const Today = () => {
     }
     };
 
+    const handleDeleteTask = async (taskId) => {
+        const { isConfirmed } = await confirm("Confirm Deletion", "Are you sure you want to delete this task?");
+
+        if (isConfirmed) {
+            try {
+                await deleteTask(taskId); // Delete the task
+                const updatedTasks = tasks.filter(task => task.id !== taskId);
+                setTasks(updatedTasks);
+                console.log("Task deleted successfully");
+            } catch (error) {
+                console.error("Error deleting task:", error);
+                // Handle deletion error
+            }
+        }
+    };
 
 
     return (
@@ -80,9 +95,7 @@ const Today = () => {
                     <Link to={`../AddTask/${task.id}`}>
                         <p className="taskBox1">📝</p>
                     </Link>
-                    <Link to={`../AddTask/${task.id}`}>
-                        <p className="taskBox1">❌</p>
-                    </Link>
+                        <p className="taskBox1" onClick={() => handleDeleteTask(task.id)} >❌</p>
                 </div>
             ))}
         </div>
