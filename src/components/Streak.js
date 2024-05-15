@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { TodayTasks, deleteTask } from "../service/api-service";
-import '../Checklist.css';
 import { confirm } from "../utils/notification";
-import { Link } from "react-router-dom";
-import { addUser,getTaskById, updateTask } from "../service/api-service";
 
-const Today = () => {
-    
+const Streak = () =>{
+
     const [tasks, setTasks] = useState([]);
     const [streak, setStreak] = useState(0); // State to track the streak count
     const [streakDate, setStreakDate] = useState(""); // State to track the date of the streak
@@ -124,34 +121,31 @@ const Today = () => {
         }
     };
 
+    const handleStreakReset = async () => {
+        const { isConfirmed } = await confirm("Reset Streak", "Are you sure you want to reset your streak?");
 
-    return (
-        <div className="inbox">
-               <div className="streak-info">
+        if (isConfirmed) {
+            setStreak(0);
+            setStreakDate("");
+            localStorage.removeItem("streak");
+            localStorage.removeItem("streakDate");
+            console.log("Streak reset successfully");
+        } else {
+            console.log("Streak reset cancelled");
+        }
+    };
+
+    return(
+        <div className="streak-info">
                 <br></br>
                 <h1>🔥 Streak: {streak} </h1>({streak} task{streak !== 1 ? 's' : ''} completed today)
+                <button onClick={handleStreakReset} className="gradient-button1">
+                Reset Streak
+            </button>
             </div>
-            {tasks.map(task => (
-                <div key={task.id} className="item">
-                    <input
-                        type="checkbox"
-                        className="box"
-                        checked={task.selected}
-                        onChange={() => handleCheckboxChange(task.id)}
-                    />
-                    <p className="taskBox">{task.name}</p>
-                    <p className="taskBox">{task.date.split('T')[0]}</p>
-                    <p className="taskBox1">{getPriorityText(task.priority)}</p>
-                    <Link to={`./AddTask/${task.id}`}>
-                        <p className="taskBox1">📝</p>
-                    </Link>
-                        <p className="taskBox1" onClick={() => handleDeleteTask(task.id)} >❌</p>
-                </div>
-            ))}
-        </div>
-    );
-};
 
-export default Today;
+            
+    )
+}
 
-
+export default Streak;
