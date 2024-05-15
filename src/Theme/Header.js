@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 // import VirinchiLogo from "../../assets/images/virinchi-logo.png";
 import React, { useState, useEffect } from 'react';
 import Second from "../images/Second";
+import Notify from "../pages/Notify";
 
 const Header = () => {
 
@@ -28,6 +29,7 @@ const Header = () => {
             <img src="path_to_profile_image.jpg" alt="Profile" className="profile-image" />
             <span className="profile-name">John Doe</span>
         </div> */}
+        <Notify/>
         <button class="logout-btn" type="button" onClick={logout} >Logout</button>
             
         </div>

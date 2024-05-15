@@ -1,5 +1,6 @@
 body{
   background-color: rgb(247, 247, 247);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .inbox {
   max-width: 1000px;
@@ -56,3 +57,79 @@ p {
 /* .item{
   margin-left: 200px;
 } */
+h5{
+  color: #464646;
+  padding:5px;
+}
+
+.about-us {
+  margin: 20px 370px;
+  max-width: 800px;
+  position: relative;
+  top: 28px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.about-us h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.about-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.about-us ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.about-us ul li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-us h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+.about-icon {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+
+}
+
+.notification-icon {
+  position: relative;
+  left: 1100px;
+  top: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #464646;
+ 
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}

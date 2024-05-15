@@ -127,7 +127,7 @@ export const addUser = (data) => {
   export const getTasksForTomorrow = () => {
       const today = new Date();
       const tomorrow = new Date(today);
-      tomorrow.setDate(today.getDate() + 1);
+      tomorrow.setDate(today.getDate());
       const tomorrowDate = formatDateForNepal(tomorrow).split('T')[0]; // Format and get tomorrow's date in YYYY-MM-DD
   
       return new Promise((resolve, reject) => {
