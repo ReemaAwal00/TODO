@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:4000/users';
+const BASE_URL = 'http://localhost:4001/users';
 
 export const addUser = (data) => {
     return new Promise((resolve, reject) => {
