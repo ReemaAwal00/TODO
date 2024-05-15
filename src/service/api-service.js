@@ -127,7 +127,7 @@ export const addUser = (data) => {
   export const getTasksForTomorrow = () => {
       const today = new Date();
       const tomorrow = new Date(today);
-      tomorrow.setDate(today.getDate());
+      tomorrow.setDate(today.getDate() + 1);
       const tomorrowDate = formatDateForNepal(tomorrow).split('T')[0]; // Format and get tomorrow's date in YYYY-MM-DD
   
       return new Promise((resolve, reject) => {
@@ -144,6 +144,48 @@ export const addUser = (data) => {
               });
       });
   };
+
+  export const getUpcomingTask1 = () => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const tomorrowDate = formatDateForNepal(tomorrow).split('T')[0]; // Format and get tomorrow's date in YYYY-MM-DD
+
+    return new Promise((resolve, reject) => {
+        axios.get(BASE_URL) // Assuming the endpoint fetches all tasks
+            .then(res => {
+                const tasksForTomorrow = res.data.filter(task => {
+                    const taskDate = task.date.split('T')[0]; // Extract date portion from task's date
+                    return taskDate === tomorrowDate; // Compare task's date with tomorrow's date
+                });
+                resolve(tasksForTomorrow);
+            })
+            .catch(err => {
+                reject(err);
+            });
+    });
+};
+
+export const getUpcomingTask2 = () => {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 2);
+  const tomorrowDate = formatDateForNepal(tomorrow).split('T')[0]; // Format and get tomorrow's date in YYYY-MM-DD
+
+  return new Promise((resolve, reject) => {
+      axios.get(BASE_URL) // Assuming the endpoint fetches all tasks
+          .then(res => {
+              const tasksForTomorrow = res.data.filter(task => {
+                  const taskDate = task.date.split('T')[0]; // Extract date portion from task's date
+                  return taskDate === tomorrowDate; // Compare task's date with tomorrow's date
+              });
+              resolve(tasksForTomorrow);
+          })
+          .catch(err => {
+              reject(err);
+          });
+  });
+};
   
 
   

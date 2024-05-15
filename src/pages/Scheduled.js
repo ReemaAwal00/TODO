@@ -3,6 +3,9 @@ import { getTasksForTomorrow, deleteTask } from "../service/api-service";
 import '../Checklist.css';
 import { confirm } from "../utils/notification";
 import { Link } from "react-router-dom";
+import Upcoming from "./Upcoming";
+import Forthcoming from "./Forthcoming";
+
 
 const ScheduledTasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -96,11 +99,16 @@ const ScheduledTasks = () => {
         </div>
 
         <h3>Upcoming Tasks</h3>
-        <h4>Friday may16</h4>
+        <h5>(Check All Tasks For More Details)</h5>
+       <Upcoming/>
+       <Forthcoming/>
 
+        
+
+        
 
         </div>
     );
 };
 
-export default ScheduledTasks;
+export default ScheduledTasks;  yo chai conflict solve gareko MdKayaking.ok
