@@ -94,6 +94,11 @@ const ScheduledTasks = () => {
                 </div>
             ))}
         </div>
+
+        <h3>Upcoming Tasks</h3>
+        <h4>Friday may16</h4>
+
+
         </div>
     );
 };

@@ -4,7 +4,7 @@ import dummyimage from "./dummyimage.png";
 const Secondimage = () => {
   return (
     <div>
-      <img src={dummyimage} alt='' className='logo'/>
+      <img src={dummyimage} alt=''  className='logo' />
     </div>
   )
 }

@@ -4,6 +4,13 @@ import React, { useState, useEffect } from 'react';
 import Second from "../images/Second";
 
 const Header = () => {
+
+    const navigate = useNavigate();
+  const logout =( ) => {
+   
+    localStorage.removeItem('isLogin')
+    navigate('/');
+  }
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -21,7 +28,7 @@ const Header = () => {
             <img src="path_to_profile_image.jpg" alt="Profile" className="profile-image" />
             <span className="profile-name">John Doe</span>
         </div> */}
-        <button class="logout-btn" type="button" >Logout</button>
+        <button class="logout-btn" type="button" onClick={logout} >Logout</button>
             
         </div>
     )

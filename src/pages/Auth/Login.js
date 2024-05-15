@@ -89,10 +89,10 @@ const Login = () => {
                             </div> --> */}
 
                             <button type="submit"  onClick={doLogin} class="login-button">Log in</button>
-                            <div class="form-group">
+                            {/* <div class="form-group">
                                 <label for="exampleInputPassword1">Dont have an account? SignUp</label>
 
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                     <div class="login-box">
