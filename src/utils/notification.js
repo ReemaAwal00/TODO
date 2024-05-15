@@ -22,7 +22,7 @@ export const success = (message) => {
       });
 }
 
-export const notif = (msg,linked) => {
+export const notif = (msg) => {
     return Swal.fire({
         icon: "info",
         title: msg,
