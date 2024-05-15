@@ -15,7 +15,7 @@
 body {
   background-color: white;
   /* color: mediumslateblue; */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   overflow:  hidden !important;
 
@@ -41,12 +41,32 @@ body {
   color: mediumslateblue;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  
+  top: 10;
+  right: 20px;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-name {
+  color: white;
+  font-weight: bold;
+}
 
 
 .sidebar {
   float: left;
   height: 660px;
-  width: 17%;
+  width: 20%;
   background-color: white;
   border-right: #e8e8e8 2px solid;
  
@@ -60,9 +80,9 @@ a{
 
 
 .sidebar li {
-  margin: 20px 20px 20px 0px;
+  margin: 20px 20px 25px 0px;
   margin-left: 40px;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   list-style: none;
@@ -88,11 +108,11 @@ a{
 .maincontainer {
   float: right;
   height: 660px;
-  width: 83%;
-  background-color: rgb(238, 238, 238);
+  width: 80%;
+  background-color: rgb(247, 247, 247);
 }
 
-.logout-btn {
+/* .logout-btn {
   height: 30px;
   width: 100px;
   background-color: white;
@@ -104,7 +124,7 @@ a{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 300px;
 
-}
+} */
 
 .logout-btn:hover {
   background-color: red;
@@ -117,7 +137,7 @@ a{
 margin-top: 30px;
 margin-left: 90px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size: 32px;
+font-size: 30px;
 line-height: 80px;
 color: #474646;
 }
@@ -377,32 +397,31 @@ input[type=text], input[type=password],select {
 }
 
 .schedule_div{
-  background-color: #2196F3;
   height: 200px;
-  width: 80%;
-  margin-left: 20px;
+  width: 70%;
+  margin-left: 350px;
+  position: relative;
+  margin: 40px 140px 209px 348px;
 }
 
-/* .fade-in-text {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.schedule_div h3{
+  font-size: 30px;
+  color: #474646;
+  
 }
 
-.fade-in-text.visible {
-  opacity: 1;
-} */
-.fading-text {
+/* .fading-text {
   animation: fadeIn 20s infinite;
-  overflow: hidden; /* Ensure text does not overflow its container */
-  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; 
+  white-space: nowrap; 
   font-size: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px 0px 0px 355px;
   font-weight: 500;
   color: mediumslateblue;
-}
+} */
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   0% {
       opacity: 0;
       width: 0;
@@ -413,9 +432,7 @@ input[type=text], input[type=password],select {
   100% {
       opacity: 0;
       width: 100%; /* Fully visible text */
-  }
-}
-
+  
 .logo{
   height: 100px;
   width: 8%;

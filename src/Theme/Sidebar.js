@@ -13,13 +13,13 @@ const Sidebar =() =>{
   return(
     <div class="sidebar">
     <ul>
-        <li > <FaHome style={{ color: 'rgb(95, 95, 95)', fontSize: '18px'}} />  <Link to="">Dashboard</Link></li>
-        <li><FaTasks style={{ color: 'rgb(95, 95, 95)', fontSize: '18px'}}/> <Link to="Task">All Tasks</Link></li>
-        <li><FaCalendarAlt style={{ color: 'rgb(95, 95, 95)', fontSize: '18px'}}/> <Link to="Scheduled">Scheduled Tasks</Link></li>
-        <li> <FaUser style={{ color: 'rgb(95, 95, 95)', fontSize: '18px'}} /> <Link to="profile"> My profile</Link></li>
-        <li><FaCog style={{ color: 'rgb(95, 95, 95)', fontSize: '18px'}} /> <Link to="settings"> Settings</Link></li>
+        <li > <FaHome style={{ color: 'rgb(95, 95, 95)', fontSize: '22px' }} />   <Link to="">Dashboard</Link></li>
+        <li><FaTasks style={{ color: 'rgb(95, 95, 95)', fontSize: '22px'}}/> <Link to="Task">All Tasks</Link></li>
+        <li><FaCalendarAlt style={{ color: 'rgb(95, 95, 95)', fontSize: '22px'}}/> <Link to="Scheduled">Scheduled Tasks</Link></li>
+        <li> <FaUser style={{ color: 'rgb(95, 95, 95)', fontSize: '22px'}} /> <Link to="profile"> My profile</Link></li>
+        <li><FaCog style={{ color: 'rgb(95, 95, 95)', fontSize: '22px'}} /> <Link to="settings"> Settings</Link></li>
     </ul>
-    <button class="logout-btn" type="button" >Log Out</button>
+    
 </div>
 );
 }

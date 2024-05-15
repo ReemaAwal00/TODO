@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Image from "../../images/Image";
 
 
+
 const Login = () => {
     const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -73,7 +74,9 @@ const Login = () => {
 
                             </div>
                             <div class="form-group">
+                          
                                 <ViPasswordInput
+                                
                                     title="Password"
                                     name="password"
                                     handleInputChange={handleInputChange}
