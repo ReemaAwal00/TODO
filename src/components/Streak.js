@@ -138,7 +138,7 @@ const Streak = () =>{
     return(
         <div className="streak-info">
                 <br></br>
-                <h1>🔥 Streak: {streak} </h1>({streak} task{streak !== 1 ? 's' : ''} completed today)
+                <h1>🔥 Streak: {streak} </h1>
                 <button onClick={handleStreakReset} className="gradient-button1">
                 Reset Streak
             </button>

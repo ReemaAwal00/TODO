@@ -1,3 +1,4 @@
+import Streak from "../components/Streak";
 import Secondimage from "../images/Secondimage";
 
 const Myprofile = () =>{
@@ -13,6 +14,7 @@ const Myprofile = () =>{
           <p><strong>Email:</strong> johndoe@example.com</p>
           <p><strong>Location:</strong> New York, USA</p>
           <p><strong>Interests:</strong> Reading, Traveling, Cooking</p>
+          <Streak/>
         </div>
       </div>
     </div>
