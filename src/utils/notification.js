@@ -22,4 +22,14 @@ export const success = (message) => {
       });
 }
 
+export const notif = (msg,linked) => {
+    return Swal.fire({
+        icon: "info",
+        title: msg,
+        text: "Have a good day! ✌",
+        confirmButtonColor: "#3085d6"
+      });
+}
+
+
 
