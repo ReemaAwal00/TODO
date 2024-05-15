@@ -44,23 +44,10 @@ body {
 .profile {
   display: flex;
   align-items: center;
-  position: absolute;
-  
-  top: 10;
-  right: 20px;
-}
+ 
+} 
 
-.profile-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
 
-.profile-name {
-  color: white;
-  font-weight: bold;
-}
 
 
 .sidebar {
@@ -112,19 +99,20 @@ a{
   background-color: rgb(247, 247, 247);
 }
 
-/* .logout-btn {
+.logout-btn {
   height: 30px;
   width: 100px;
   background-color: white;
-  color: black;
-  border-color: white;
+  color: #474646;
+  border: #4972B5 2px solid;
   border-radius: 4px;
-  font-size: 16px;
-  margin-left: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 1145px;
+  margin-top: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 300px;
 
-} */
+}
 
 .logout-btn:hover {
   background-color: red;
@@ -146,7 +134,7 @@ color: #474646;
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
-  color: #4972B5;
+  color: #355281;
 }
 
 .gradient-button {
@@ -433,16 +421,54 @@ input[type=text], input[type=password],select {
       opacity: 0;
       width: 100%; /* Fully visible text */
   
-.logo{
+/* .logo{
   height: 100px;
-  width: 8%;
+  width: 100%;
   margin-top: 50px;
   margin-left: 240px;
 
-}
+} */
 .image{
-  height: 65px;
-  width: 70%;
-  margin-top: 10px;
-  margin-left: 37px;
+  height: 90px;
+  width: 100%;
+
+  margin-left: 15px;
+}
+
+.profile-container {
+  margin: 20px 370px;
+  max-width: 800px;
+  position: relative;
+  top: 28px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 10px 20px 20px 20px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+.profile-info strong {
+  font-weight: bold;
 }

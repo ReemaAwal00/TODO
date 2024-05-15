@@ -21,7 +21,7 @@ const Header = () => {
             <img src="path_to_profile_image.jpg" alt="Profile" className="profile-image" />
             <span className="profile-name">John Doe</span>
         </div> */}
-        <button class="logout-btn" type="button" >Log Out</button>
+        <button class="logout-btn" type="button" >Logout</button>
             
         </div>
     )
