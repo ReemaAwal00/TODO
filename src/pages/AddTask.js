@@ -11,7 +11,6 @@ import { success } from "../utils/notification";
 const AddTask = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const { taskId } = useParams();
-  const { taskId } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
