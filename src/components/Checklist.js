@@ -75,6 +75,31 @@ const Checklist = () => {
         }
     };
 
+    const handleCheckboxChange = async (taskId) => {
+        const selectedTask = tasks.find(task => task.id === taskId);
+
+        if (!selectedTask) {
+            return; // Task not found
+        }
+
+        const { isConfirmed } = await confirm("Congrats! You completed a task 😁", "Are you sure you want to delete it now?");
+
+        if (isConfirmed) {
+
+        try {
+            await deleteTask(taskId); // Delete the task
+            // Remove the task from the UI
+            const updatedTasks = tasks.filter(task => task.id !== taskId);
+            setTasks(updatedTasks);
+            // console.log("Task deleted successfully");              
+        } catch (error) {
+            console.error("Error deleting task:", error);
+            // Handle deletion error (e.g., display error message)
+        }
+
+    }
+    };
+
     return (
         <div className="inbox_checklist">
 
@@ -90,16 +115,14 @@ const Checklist = () => {
                 
                 <div key={index} className="item">
                      
-                    <input type="checkbox" onClick={() => handleDeleteTask(task.id)} className="box" />
+                    <input type="checkbox" onClick={() => handleCheckboxChange(task.id)} className="box" />
                     <p className="taskBox">{task.name}</p>
                     <p className="taskBox">{formatDate(task.date)}</p>
                     <p className="taskBox1">{getPriorityText(task.priority)}</p>
                     <Link to={`../AddTask/${task.id}`}>
                     <p className="taskBox1">📝</p>
                     </Link>
-                    <Link to={`../AddTask/${task.id}`}>
-                    <p className="taskBox1">❌</p>
-                    </Link>
+                    <p className="taskBox1" onClick={() => handleDeleteTask(task.id)} >❌</p>
                  
 
                 </div>

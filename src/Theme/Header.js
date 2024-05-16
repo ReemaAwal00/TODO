@@ -1,8 +1,17 @@
 import { useNavigate } from "react-router-dom";
 // import VirinchiLogo from "../../assets/images/virinchi-logo.png";
-import { useState,useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Second from "../images/Second";
+import Notify from "../pages/Notify";
 
 const Header = () => {
+
+    const navigate = useNavigate();
+  const logout =( ) => {
+   
+    localStorage.removeItem('isLogin')
+    navigate('/');
+  }
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -12,13 +21,16 @@ const Header = () => {
     return (
         <div className="header">
 
-            <h1>ListFull</h1>
+           <Second/>
             {/* <div className="{`fade-in-text ${isVisible ? 'visible' : ''}`}">
             <p>This text will fade in when the component mounts.</p>
             </div> */}
-             <div className="fading-text">
-                Let's Be Some Productive Everyday😉
-            </div>
+             {/* <div className="profile">
+            <img src="path_to_profile_image.jpg" alt="Profile" className="profile-image" />
+            <span className="profile-name">John Doe</span>
+        </div> */}
+        <Notify/>
+        <button class="logout-btn" type="button" onClick={logout} >Logout</button>
             
         </div>
     )
