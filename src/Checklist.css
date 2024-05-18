@@ -156,3 +156,20 @@ margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 150px;
 }
+
+.active {
+  font-weight: bold;
+}
+
+.active a {
+  color: #3a67b0; 
+}
+
+.active-icon {
+  color: #3a67b0; /* Change this to your preferred active icon color */
+}
+
+/* Example: To style the icon within the active li */
+li .active-icon {
+  color: #3a67b0; /* Change this to your preferred active icon color */
+}
