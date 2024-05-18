@@ -98,7 +98,7 @@ const Login = () => {
                     <div class="login-box">
                         <h2>A better TO-DO List App for You!</h2>
                         <div class="login-box1">
-                            <h4>We make it easier for a team or an individual to plan their works by using TO-DO app Listfull
+                            <h4>We make it easier for an individual to plan their works by using TO-DO app Listfull
                             </h4>
                         </div>
                     </div>
