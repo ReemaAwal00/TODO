@@ -79,8 +79,8 @@ a{
   gap: 15px;
   text-decoration: none;
   cursor: pointer;
+  color: rgb(87, 87, 87) ;
 }
-
 
 
 .sidebar ul li a:hover {
@@ -297,7 +297,7 @@ input[type=text], input[type=password],select {
 
 }
 
-.login-button{
+.loginbutton{
   background: linear-gradient(to right, #4972B5, #2196F3);
   color: white;
   padding: 10px 20px;
@@ -313,8 +313,9 @@ input[type=text], input[type=password],select {
   width: 150px;
 }
 
-.login-button:hover{
+.loginbutton:hover{
   background: linear-gradient(to right, #3a598b, #1b7ccc);
+  color: white;
 }
 
 .login-box h4 {
@@ -465,7 +466,7 @@ input[type=text], input[type=password],select {
 }
 
 .profile-picture img {
-  width: 200px;
+  width: 220px;
   height: 200px;
   border-radius: 50%;
   margin-right: 20px;

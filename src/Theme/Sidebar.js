@@ -13,11 +13,11 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul>
         <li className={activeIndex === 0 ? "active" : ""} onClick={() => handleClick(0)}>
-          <FaHome className={activeIndex === 0 ? "active-icon" : ""} style={{ fontSize: '22px' }} />
-          <Link to="/"> Dashboard</Link>
+          <FaHome className={activeIndex === 0 ? "active-icon" : ""} style={{  fontSize: '22px' }} />
+          <Link to="/pages/Main"> Dashboard</Link>
         </li>
         <li className={activeIndex === 1 ? "active" : ""} onClick={() => handleClick(1)}>
-          <FaTasks className={activeIndex === 1 ? "active-icon" : ""} style={{ fontSize: '22px' }} />
+          <FaTasks className={activeIndex === 1 ? "active-icon" : ""} style={{  fontSize: '22px' }} />
           <Link to="Task"> All Tasks</Link>
         </li>
         <li className={activeIndex === 2 ? "active" : ""} onClick={() => handleClick(2)}>

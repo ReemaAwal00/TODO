@@ -82,17 +82,16 @@ const Login = () => {
                                     handleInputChange={handleInputChange}
                                     value={password} />
 
+                                     <button type="submit" onClick={doLogin} class="loginbutton">Log in</button>
+
                             </div>
                             {/* <!-- <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div> --> */}
 
-                            <button type="submit"  onClick={doLogin} class="login-button">Log in</button>
-                            {/* <div class="form-group">
-                                <label for="exampleInputPassword1">Dont have an account? SignUp</label>
-
-                            </div> */}
+                           
+                          
                         </form>
                     </div>
                     <div class="login-box">
