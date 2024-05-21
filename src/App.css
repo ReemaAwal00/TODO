@@ -17,7 +17,7 @@ body {
   /* color: mediumslateblue; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  overflow:  hidden !important;
+  /* overflow:  hidden !important; */
 
 }
 
@@ -73,8 +73,11 @@ a{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 8px ;
+  gap: 15px;
   text-decoration: none;
-
   cursor: pointer;
 }
 
@@ -86,6 +89,8 @@ a{
   width: 83%;
   border-radius: 5px;
   color: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .sidebar ul li a :active{
@@ -186,7 +191,6 @@ color: #474646;
   position: relative;
   top: 40px;
   left: 240px;
- 
   /* text-align: center; */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 40px;

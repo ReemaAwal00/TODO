@@ -52,7 +52,7 @@ const Login = () => {
     useEffect(() => {
       const isLogin = localStorage.getItem('isLogin');
       if(isLogin === '1') {
-        navigate('/');
+        navigate('/Login');
       }
     }, []);
     return (
