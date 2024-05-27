@@ -45,39 +45,18 @@ const Today = () => {
         localStorage.setItem("streakDate", streakDate);
     };
 
-    useEffect(() => {
-        loadTasks();
-        loadStreakFromLocalStorage(); // Load streak data from local storage on component mount
-    }, []); 
 
     useEffect(() => {
-        saveStreakToLocalStorage(); // Save streak data to local storage whenever streak or streakDate changes
-    }, [streak, streakDate]);
-
-    const loadTasks = async () => {
-        try {
-            const data = await TodayTasks();
-            setTasks(data);
-        } catch (error) {
-            alert("API server error");
-            console.log(error);
-        }
-    };
-
-    const loadStreakFromLocalStorage = () => {
-        const savedStreak = localStorage.getItem("streak");
-        const savedStreakDate = localStorage.getItem("streakDate");
-
-        if (savedStreak && savedStreakDate) {
-            setStreak(parseInt(savedStreak, 10));
-            setStreakDate(savedStreakDate);
-        }
-    };
-
-    const saveStreakToLocalStorage = () => {
-        localStorage.setItem("streak", streak.toString());
-        localStorage.setItem("streakDate", streakDate);
-    };
+        TodayTasks()
+            .then(data => {
+                console.log("API Response:", data); // Log API response for debugging
+                setTasks(data);
+            })
+            .catch(err => {
+                alert("API server error");
+                console.log(err);
+            });
+    }, []);
 
     const getPriorityText = (priority) => {
         switch (priority) {
@@ -150,7 +129,7 @@ const Today = () => {
         <div className="inbox">
                <div className="streak-info">
                 <br></br>
-                <h1>🔥 Streak: {streak} </h1>({streak} task{streak !== 1 ? 's' : ''} completed today)
+                <h1>🔥 Streak: {streak} </h1> <br></br>({streak} task{streak !== 1 ? 's' : ''} completed today)
             </div>
             {tasks.map(task => (
                 <div key={task.id} className="item">
@@ -163,17 +142,15 @@ const Today = () => {
                     <p className="taskBox">{task.name}</p>
                     <p className="taskBox">{task.date.split('T')[0]}</p>
                     <p className="taskBox1">{getPriorityText(task.priority)}</p>
-                    <Link to={`./AddTask/${task.id}`}>
+                    <Link to={`./Movie/${task.id}`}>
                         <p className="taskBox1">📝</p>
                     </Link>
                         <p className="taskBox1" onClick={() => handleDeleteTask(task.id)} >❌</p>
                 </div>
             ))}
         </div>
-        </div>
     );
 };
 
 export default Today;
-
 
